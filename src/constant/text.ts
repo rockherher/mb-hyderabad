@@ -22,10 +22,6 @@ import section4 from '../assets/icons/19-section.png';
 import section5 from '../assets/icons/20-section.png';
 import section6 from '../assets/icons/21-section.png';
 
-import section7 from '../assets/icons/22-section.png';
-import section8 from '../assets/icons/23-section.png';
-import section9 from '../assets/icons/24-section.png';
-import section10 from '../assets/icons/25-section.png';
 
 import empArum from '@/assets/img-vid/emp-arun-kumar.jpeg';
 import empHarshadha from '@/assets/img-vid/emp-harshadha-jambula.jpeg';
