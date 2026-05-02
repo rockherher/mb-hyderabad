@@ -39,7 +39,7 @@ const Features = () => {
               {feature.subtitle}
             </p>
 
-            <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#EAEAEA] duration-300 group-hover:bg-[#0067B1]" />
+            <span className="absolute bottom-0 left-0 w-full h-0.75 bg-[#EAEAEA] duration-300 group-hover:bg-[#0067B1]" />
           </div>
         ))}
       </div>

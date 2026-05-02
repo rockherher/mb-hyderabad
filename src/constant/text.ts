@@ -32,6 +32,14 @@ import empShoban from '@/assets/img-vid/emp-sboban-sangi.jpeg';
 import empSrikanth from '@/assets/img-vid/emp-srikanth-kodam.jpeg';
 import empSunitha from '@/assets/img-vid/emp-sunitha-arakala.jpeg';
 
+
+export const navLinks = [
+  { label: 'Services', href: '#services' },
+  { label: 'Book Now', href: '#book-now' },
+  { label: 'Faqs', href: '#faqs' },
+  { label: 'Contact', href: '#contact' },
+];
+
 export const featureData = [
   {
     title: 'Certified Technicians',

@@ -10,7 +10,7 @@ const FAQ = () => {
   };
 
   return (
-    <section className="py-12 md:py-20">
+    <section className="py-12 md:py-20" id="faqs">
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
         <h2 className="text-center text-2xl sm:text-3xl md:text-4xl font-serif mb-10 md:mb-14">
           Frequently Asked Questions
@@ -23,10 +23,10 @@ const FAQ = () => {
             return (
               <div key={i} className="pb-3 sm:pb-4">
                 <button onClick={() => toggle(i)} className="w-full text-left">
-                  <div className="flex items-center justify-between gap-4">
+                  <div className="flex items-center justify-between gap-4 cursor-pointer ">
                     <span
                       className={`text-lg sm:text-[17px] md:text-[18px] tracking-wide transition-colors duration-200 ${
-                        isOpen ? 'text-[#0067B1]' : 'text-black'
+                        isOpen ? 'text-[#0067B1] font-bold' : 'text-black'
                       }`}
                     >
                       {item.q}
@@ -44,7 +44,7 @@ const FAQ = () => {
 
                   <div
                     className={`mt-2 sm:mt-3 h-px w-full transition-colors duration-200 ${
-                      isOpen ? 'bg-[#0067B1]' : 'bg-black'
+                      isOpen ? 'bg-[#0067B1]' : 'bg-gray-300'
                     }`}
                   />
                 </button>

@@ -1,29 +1,12 @@
-import { useState, type MouseEvent } from 'react';
+import { useState } from 'react';
 
 import MBLogoT from '../assets/Logos/mb-logo-transparent.png';
 import { Menu, X } from 'lucide-react';
+import { navLinks } from '@/constant/text';
+import { handleScroll } from '@/lib/utils';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-
-  const navLinks = [
-    { label: 'SERVICES', href: '#services' },
-    { label: 'BOOK NOW', href: '#book-now' },
-    { label: 'FAQS', href: '#faqs' },
-    { label: 'CONTACT', href: '#contact' },
-  ];
-
-  const handleScroll = (
-    e: MouseEvent<HTMLAnchorElement | HTMLButtonElement>,
-    id: string,
-  ): void => {
-    e.preventDefault();
-    const el = document.querySelector<HTMLElement>(id);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-      setIsOpen(false);
-    }
-  };
 
   return (
     <nav className="bg-black text-white w-full sticky top-0 z-50">
@@ -41,8 +24,10 @@ const Navbar = () => {
             <li key={link.label}>
               <a
                 href={link.href}
-                onClick={(e) => handleScroll(e, link.href)}
-                className="text-[13px] font-medium tracking-[0.15em] hover:text-gray-400 transition-colors"
+                onClick={(e) =>
+                  handleScroll(e, link.href, () => setIsOpen(false))
+                }
+                className="text-[13px] font-medium tracking-[0.15em] hover:text-gray-400 transition-colors uppercase"
               >
                 {link.label}
               </a>
@@ -63,7 +48,7 @@ const Navbar = () => {
                 <a
                   href={link.href}
                   onClick={(e) => handleScroll(e, link.href)}
-                  className="text-sm tracking-widest hover:text-gray-400 transition-colors"
+                  className="text-sm tracking-widest hover:text-gray-400 transition-colors uppercase"
                 >
                   {link.label}
                 </a>

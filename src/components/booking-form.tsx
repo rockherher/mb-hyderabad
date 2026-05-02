@@ -1,3 +1,4 @@
+import { ChevronDown } from 'lucide-react';
 import React, { useState } from 'react';
 
 const BookingForm: React.FC = () => {
@@ -11,7 +12,7 @@ const BookingForm: React.FC = () => {
   });
 
   return (
-    <section className="container bg-white p-5 sm:py-16 sm:px-10">
+    <section className="container bg-white p-5 sm:py-16 sm:px-10" id="book-now">
       <div className="max-w-4xl mx-auto text-center mb-10">
         <h2 className="text-3xl md:text-4xl font-serif text-gray-900 mb-4">
           Get Your Slot in Minutes
@@ -61,50 +62,60 @@ const BookingForm: React.FC = () => {
             />
           </div>
 
-          {/* Car Model */}
           <div className="flex flex-col space-y-2">
             <label className="text-md font-medium text-gray-700 ml-2">
               Car Model
             </label>
-            <select
-              name="carModel"
-              value={formData.carModel}
-              className="w-full px-6 py-4 rounded-full border border-gray-300 bg-white"
-              onChange={(e) =>
-                setFormData({ ...formData, carModel: e.target.value })
-              }
-            >
-              <option value="c-class" defaultChecked>
-                C-Class
-              </option>
-              <option value="e-class">E-Class</option>
-              <option value="s-class">S-Class</option>
-              <option value="glc">GLC</option>
-            </select>
+
+            <div className="relative">
+              <select
+                name="carModel"
+                value={formData.carModel}
+                onChange={(e) =>
+                  setFormData({ ...formData, carModel: e.target.value })
+                }
+                className="appearance-none w-full px-6 py-4 rounded-full border border-gray-300 bg-white cursor-pointer pr-12 focus:outline-none focus:ring-2 focus:ring-[#0067B1]"
+              >
+                <option value="c-class">C-Class</option>
+                <option value="e-class">E-Class</option>
+                <option value="s-class">S-Class</option>
+                <option value="glc">GLC</option>
+              </select>
+
+              {/* Custom Arrow */}
+              <ChevronDown
+                size={18}
+                className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-gray-500"
+              />
+            </div>
           </div>
 
-          {/* Service Type */}
           <div className="flex flex-col space-y-2">
             <label className="text-md font-medium text-gray-700 ml-2">
               Service Type
             </label>
-            <select
-              name="serviceType"
-              value={formData.serviceType}
-              className="w-full px-6 py-4 rounded-full border border-gray-300 bg-white"
-              onChange={(e) =>
-                setFormData({ ...formData, serviceType: e.target.value })
-              }
-            >
-              <option value="periodic" defaultChecked>
-                Periodic Maintenance
-              </option>
-              <option value="repair">General Repair</option>
-              <option value="body">Body & Paint</option>
-            </select>
+
+            <div className="relative">
+              <select
+                name="serviceType"
+                value={formData.serviceType}
+                onChange={(e) =>
+                  setFormData({ ...formData, serviceType: e.target.value })
+                }
+                className="appearance-none w-full px-6 py-4 rounded-full border border-gray-300 bg-white cursor-pointer pr-12"
+              >
+                <option value="periodic">Periodic Maintenance</option>
+                <option value="repair">General Repair</option>
+                <option value="body">Body & Paint</option>
+              </select>
+
+              <ChevronDown
+                size={18}
+                className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-gray-500"
+              />
+            </div>
           </div>
 
-          {/* Date */}
           <div className="flex flex-col space-y-2">
             <label className="text-md font-medium text-gray-700 ml-2">
               Preferred Date & Time
@@ -113,7 +124,7 @@ const BookingForm: React.FC = () => {
               name="preferredDate"
               value={formData.preferredDate}
               type="datetime-local"
-              className="w-full px-6 py-4 rounded-full border border-gray-300 bg-white"
+              className="w-full px-6 py-4 rounded-full border border-gray-300 bg-white cursor-pointer"
               onChange={(e) =>
                 setFormData({ ...formData, preferredDate: e.target.value })
               }
@@ -128,7 +139,7 @@ const BookingForm: React.FC = () => {
                 type="checkbox"
                 value="true"
                 checked={formData.expressService}
-                className="w-5 h-5 accent-[#005694]"
+                className="w-5 h-5 accent-[#005694] cursor-pointer"
                 onChange={(e) =>
                   setFormData({
                     ...formData,

@@ -3,7 +3,7 @@ import { cn } from '@/lib/utils';
 
 const ServicesGrid = () => {
   return (
-    <section className="bg-white py-16 md:py-24 px-4 sm:px-6">
+    <section className="bg-white py-16 md:py-24 px-4 sm:px-6" id="services">
       <div className="max-w-7xl mx-auto text-center mb-12 md:mb-16">
         <h2 className="text-2xl sm:text-3xl md:text-5xl font-serif text-gray-900">
           Our Complete Service Range
@@ -28,7 +28,7 @@ const ServicesGrid = () => {
                 src={service.image}
                 alt={service.title}
                 className={cn(
-                  'w-12 sm:w-14 h-8 sm:h-10 object-contain transition-transform duration-300',
+                  'w-12 sm:w-14 h-8 sm:h-10 object-contain transition-transform duration-300 cursor-pointer',
                   service.scale,
                 )}
               />

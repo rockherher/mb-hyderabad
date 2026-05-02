@@ -30,7 +30,7 @@ const ExpressService = () => {
           {features.map((item, i) => (
             <div
               key={i}
-              className="group flex flex-col items-center max-w-36 sm:max-w-65"
+              className="group flex flex-col items-center max-w-36 sm:max-w-65  cursor-pointer"
             >
               <div
                 className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full 
@@ -45,7 +45,7 @@ const ExpressService = () => {
                   className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 object-contain 
                   brightness-0 invert sepia saturate-600 hue-rotate-190
                   transition-all duration-300 
-                  group-hover:invert-0 group-hover:brightness-0"
+                  group-hover:invert-0 group-hover:brightness-0 group-hover:scale-105 "
                 />
               </div>
 

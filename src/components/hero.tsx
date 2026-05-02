@@ -1,3 +1,4 @@
+import { handleScroll } from '@/lib/utils';
 import HeroBanner from '../assets/img-vid/01-hero-section-banner.jpg';
 
 const Hero = () => {
@@ -31,11 +32,17 @@ const Hero = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 pt-2 md:pt-4">
-            <button className="px-6 sm:px-8 py-3 border border-white text-white font-sans text-xs sm:text-sm font-medium hover:bg-[#0067B1] hover:text-white transition-all rounded-md hover:border-[#0067B1]">
+            <button
+              className="px-6 sm:px-8 py-3 border border-white text-white font-sans text-xs sm:text-sm font-medium hover:bg-[#0067B1] hover:text-white transition-all rounded-md hover:border-[#0067B1] cursor-pointer"
+              onClick={(e) => handleScroll(e, '#book-now')}
+            >
               Book Your Service
             </button>
 
-            <button className="px-6 sm:px-8 py-3 sm:py-5 bg-[#0067B1] text-white font-sans text-xs sm:text-sm font-medium hover:bg-[#005694] transition-all rounded-md">
+            <button
+              className="px-6 sm:px-8 py-3 sm:py-5 bg-[#0067B1] text-white font-sans text-xs sm:text-sm font-medium hover:bg-[#005694] transition-all rounded-md cursor-pointer"
+              onClick={(e) => handleScroll(e, '#book-now')}
+            >
               Schedule a Pickup
             </button>
           </div>

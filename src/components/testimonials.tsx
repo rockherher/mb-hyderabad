@@ -21,7 +21,7 @@ const Testimonials = () => {
           {reviews.map((item, i) => (
             <div
               key={i}
-              className="rounded-md p-4 sm:p-4.5 bg-[#f5f5f5] border hover:border-[#0067B1] duration-200 hover:shadow"
+              className="rounded-md p-4 sm:p-4.5 bg-[#f5f5f5] border hover:border-[#0067B1] duration-200 hover:shadow cursor-pointer"
             >
               <Stars />
 

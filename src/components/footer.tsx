@@ -1,3 +1,5 @@
+import { navLinks } from '@/constant/text';
+import { handleScroll } from '@/lib/utils';
 import { Phone, Mail } from 'lucide-react';
 import {
   FaWhatsapp,
@@ -6,9 +8,29 @@ import {
   FaYoutube,
 } from 'react-icons/fa';
 
+const socialLinks = [
+  {
+    icon: FaInstagram,
+    href: 'https://instagram.com',
+  },
+  {
+    icon: FaFacebookF,
+    href: 'https://facebook.com',
+  },
+  {
+    icon: FaYoutube,
+    href: 'https://youtube.com',
+  },
+];
+
+const newNavLink = [...navLinks, { label: 'Privacy Policy', href: '#contact' }];
+
 const Footer = () => {
   return (
-    <footer className="bg-black text-white border-t border-[#6666666c]">
+    <footer
+      className="bg-black text-white border-t border-[#6666666c]"
+      id="contact"
+    >
       <div className="max-w-5xl mx-auto px-4 sm:px-6 py-12 md:py-16 text-center">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif mb-8 md:mb-10">
           Get in Touch With Us
@@ -73,36 +95,17 @@ const Footer = () => {
 
         <div className="mt-6 pt-6">
           <ul className="flex flex-wrap justify-center gap-4 sm:gap-6 text-xs sm:text-sm">
-            <li>
-              <a href="#" className="text-white">
-                Home
-              </a>
-            </li>
-            <li>
-              <a href="#" className="text-white">
-                Book Now
-              </a>
-            </li>
-            <li>
-              <a href="#" className="text-white">
-                Services
-              </a>
-            </li>
-            <li>
-              <a href="#" className="text-white">
-                FAQs
-              </a>
-            </li>
-            <li>
-              <a href="#" className="text-white">
-                Contact Us
-              </a>
-            </li>
-            <li>
-              <a href="#" className="text-white">
-                Privacy Policy
-              </a>
-            </li>
+            {newNavLink.map((link) => (
+              <li key={link.href}>
+                <a
+                  href={link.href}
+                  className="text-white hover:underline transition"
+                  onClick={(e) => handleScroll(e, link.href)}
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
 
@@ -124,15 +127,17 @@ const Footer = () => {
         </p>
 
         <div className="flex gap-3 sm:gap-4 mt-3 md:mt-0">
-          <a className="w-8 h-8 border border-gray-600/40 rounded-full flex items-center justify-center bg-white">
-            <FaInstagram size={16} color="#000" />
-          </a>
-          <a className="w-8 h-8 border border-gray-600/40 rounded-full flex items-center justify-center bg-white">
-            <FaFacebookF size={16} color="#000" />
-          </a>
-          <a className="w-8 h-8 border border-gray-600/40 rounded-full flex items-center justify-center bg-white">
-            <FaYoutube size={16} color="#000" />
-          </a>
+          {socialLinks.map(({ icon: Icon, href }, index) => (
+            <a
+              key={index}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-8 h-8 border border-gray-600/40 rounded-full flex items-center justify-center bg-white cursor-pointer hover:bg-gray-100 transition"
+            >
+              <Icon size={16} color="#000" />
+            </a>
+          ))}
         </div>
       </div>
     </footer>
