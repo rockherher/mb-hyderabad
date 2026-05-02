@@ -15,7 +15,7 @@ const Navbar = () => {
           <img
             src={MBLogoT}
             alt="Mercedes-Benz Logo"
-            className="h-full w-auto object-contain"
+            className="h-full w-auto object-contain cursor-pointer"
           />
         </div>
 
