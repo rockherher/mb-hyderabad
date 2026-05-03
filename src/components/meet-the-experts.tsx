@@ -23,6 +23,7 @@ const ExpertProfile = ({
       visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
     }}
     className="flex flex-col items-center text-center group"
+    key={index}
   >
     <div className="w-24 h-24 sm:w-28 sm:h-28 md:w-40 md:h-40 rounded-full overflow-hidden mb-3 md:mb-4 group-hover:border-gray-200 transition-all duration-300 border-gray-500">
       <img src={imageUrl} alt={name} className="w-full h-full object-cover" />
