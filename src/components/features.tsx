@@ -47,21 +47,20 @@ const Features = () => {
               hidden: { opacity: 0, y: 20 },
               visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
             }}
-            className="relative bg-[#EAEAEA] p-6 sm:p-8 md:p-10 flex flex-col items-center text-center space-y-3 sm:space-y-4 group cursor-pointer justify-center w-full h-auto min-h-55 hover:bg-white hover:border-[#0067B1] hover:border-t hover:border-r hover:border-l transition-all duration-300 hover:border-b-4"
+            className="relative bg-[#EAEAEA] p-6 sm:p-8 md:p-10 flex flex-col items-center text-center space-y-1 sm:space-y-1 group cursor-pointer justify-center w-full h-auto min-h-55 hover:bg-white hover:border-[#0067B1] hover:border-t hover:border-r hover:border-l transition-all duration-300 hover:border-b-4"
           >
-            <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center">
+            <div className="w-16 h-16 sm:w-16 sm:h-16 flex items-center justify-center mb-4">
               <img
                 src={feature.image}
                 alt={feature.title}
                 className="w-full h-full object-contain transition-all duration-300 brightness-0"
               />
             </div>
-
-            <h4 className="text-base sm:text-lg font-semibold text-gray-900 transition-colors duration-300 group-hover:text-[#0067B1]">
+            <h4 className="text-base sm:text-xl font-semibold text-gray-900 transition-colors duration-300 group-hover:text-[#0067B1]">
               {feature.title}
             </h4>
 
-            <p className="text-xs sm:text-sm text-gray-600 font-medium transition-colors duration-300 group-hover:text-[#0067B1]">
+            <p className="text-md sm:text-md text-gray-600 font-medium transition-colors duration-300 group-hover:text-[#0067B1]">
               {feature.subtitle}
             </p>
           </motion.div>

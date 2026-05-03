@@ -19,7 +19,7 @@ const Testimonials = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center text-2xl sm:text-3xl md:text-[34px] font-serif mb-8 md:mb-12.5 text-black"
+          className="text-2xl sm:text-3xl md:text-5xl font-serif text-gray-900  md:mb-10 text-center mb-6"
         >
           Trusted by Mercedes-Benz Owners Across Hyderabad
         </motion.h2>
@@ -54,7 +54,7 @@ const Testimonials = () => {
                 {item.name}
               </p>
 
-              <p className="text-xs sm:text-sm md:text-[14px] text-[#555] leading-[1.55]">
+              <p className="text-sm sm:text-sm md:text-[14px] text-[#555] leading-[1.55]">
                 {item.text}
               </p>
             </motion.div>

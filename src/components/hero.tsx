@@ -19,7 +19,7 @@ const Hero = () => {
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 md:px-12 relative z-10 text-white">
-        <div className="max-w-5xl space-y-6 md:space-y-10">
+        <div className="max-w-5xl space-y-3 md:space-y-4">
           <motion.div
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -36,7 +36,7 @@ const Hero = () => {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-sm sm:text-lg md:text-xl lg:text-2xl font-sans tracking-wide"
+            className="text-md sm:text-lg md:text-xl lg:text-2xl font-sans tracking-wide"
           >
             Expert Technicians, Genuine Parts, Hassle-Free Pickup & Drop
           </motion.p>
@@ -45,7 +45,7 @@ const Hero = () => {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-xs sm:text-sm font-sans tracking-wider text-gray-300"
+            className="text-sm sm:text-sm font-sans tracking-wider text-gray-300"
           >
             Mercedes-Benz Authorised Service Partner
           </motion.p>
@@ -54,7 +54,7 @@ const Hero = () => {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="flex flex-col sm:flex-row gap-4 sm:gap-6 pt-2 md:pt-4"
+            className="flex flex-row sm:flex-row gap-4 sm:gap-6 pt-2 md:pt-4"
           >
             <button
               className="px-6 sm:px-8 py-3 border border-white text-white font-sans text-xs sm:text-sm font-medium hover:bg-[#0067B1] hover:text-white transition-all rounded-md hover:border-[#0067B1] cursor-pointer"

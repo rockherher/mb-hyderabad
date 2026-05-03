@@ -72,7 +72,7 @@ const MeetTheExperts = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-12 md:mb-20"
         >
-          <h2 className="text-2xl sm:text-3xl md:text-5xl font-serif text-gray-900">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-serif text-gray-900 mb-4 md:mb-6">
             Meet the Experts
           </h2>
         </motion.div>

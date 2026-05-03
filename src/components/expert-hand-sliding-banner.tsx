@@ -55,7 +55,7 @@ const ExpertHandSliderBanner = () => {
         whileInView={{ y: 0, opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="text-center text-2xl sm:text-3xl md:text-[32px] font-serif"
+        className="text-2xl sm:text-3xl md:text-5xl font-serif text-gray-900 mb-4 md:mb-6 text-center"
       >
         Your Car is in Expert Hands
       </motion.h2>

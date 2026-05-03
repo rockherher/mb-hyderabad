@@ -20,7 +20,7 @@ const ExpressService = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-white text-3xl sm:text-3xl md:text-5xl font-serif mb-4 md:mb-6"
+          className="text-2xl sm:text-3xl md:text-5xl font-serif mb-4 md:mb-6 text-white"
         >
           Premier Express Prime Service
         </motion.h2>
@@ -74,7 +74,7 @@ const ExpressService = () => {
               className="group flex flex-col items-center max-w-36 sm:max-w-65  cursor-pointer"
             >
               <div
-                className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full 
+                className="w-24 h-24 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full 
                 flex items-center justify-center mb-3 
                 bg-transparent border-2 border-white
                 transition-all duration-300
@@ -83,14 +83,14 @@ const ExpressService = () => {
                 <img
                   src={item.image}
                   alt={item.text}
-                  className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 object-contain 
+                  className="w-14 h-14 sm:w-12 sm:h-12 md:w-14 md:h-14 object-contain 
                   brightness-0 invert sepia saturate-600 hue-rotate-190
                   transition-all duration-300 
                   group-hover:invert-0 group-hover:brightness-0 group-hover:scale-105 "
                 />
               </div>
 
-              <p className="text-xs sm:text-sm md:text-[16px] text-white leading-snug whitespace-pre-line text-center">
+              <p className="text-sm sm:text-md md:text-[16px] text-white leading-snug whitespace-pre-line text-center">
                 {item.text}
               </p>
             </motion.div>

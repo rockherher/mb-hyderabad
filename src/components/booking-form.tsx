@@ -88,7 +88,7 @@ const BookingForm: React.FC = () => {
   return (
     <section className="container bg-white p-5 sm:py-16 sm:px-10" id="book-now">
       <div className="max-w-4xl mx-auto text-center mb-10">
-        <h2 className="text-3xl md:text-4xl font-serif text-gray-900 mb-4">
+        <h2 className="text-2xl sm:text-3xl md:text-5xl font-serif text-gray-900 mb-4 md:mb-6">
           Get Your Slot in Minutes
         </h2>
         <p className="text-gray-600 font-sans text-md sm:text-lg">
@@ -96,12 +96,12 @@ const BookingForm: React.FC = () => {
         </p>
       </div>
 
-      <div className="mx-auto bg-[#F8F8F8] rounded-2xl p-8 md:p-12 border border-gray-300">
+      <div className="mx-auto bg-[#F8F8F8] rounded-2xl p-4 md:p-8 border border-gray-300">
         <form
           onSubmit={handleSubmit}
           action="https://script.google.com/macros/s/AKfycbzcZozvQtDM7G4Eu1-o3z539aDmoogiK5N134HadcT0jdx_6I1sHjBXbFSsQwAg1b2W9w/exec"
           method="POST"
-          className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8"
+          className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4"
         >
           {/* Full Name */}
           <div className="flex flex-col space-y-2">

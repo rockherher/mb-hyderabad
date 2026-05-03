@@ -18,7 +18,7 @@ const FAQ = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center text-2xl sm:text-3xl md:text-4xl font-serif mb-10 md:mb-14"
+          className="text-center  text-2xl sm:text-3xl md:text-5xl font-serif text-gray-900 mb-4 md:mb-8"
         >
           Frequently Asked Questions
         </motion.h2>
@@ -39,7 +39,7 @@ const FAQ = () => {
                 <button onClick={() => toggle(i)} className="w-full text-left">
                   <div className="flex items-center justify-between gap-4 cursor-pointer ">
                     <span
-                      className={`text-lg sm:text-[17px] md:text-[18px] tracking-wide transition-colors duration-200 ${
+                      className={`text-md sm:text-md md:text-lg tracking-wide transition-colors duration-200 ${
                         isOpen ? 'text-[#0067B1] font-bold' : 'text-black'
                       }`}
                     >
@@ -72,7 +72,7 @@ const FAQ = () => {
                       transition={{ duration: 0.3, ease: 'easeInOut' }}
                       className="overflow-hidden"
                     >
-                      <p className="text-md sm:text-sm text-black leading-relaxed pr-2 sm:pr-6 mt-2 sm:mt-3">
+                      <p className="text-sm sm:text-md text-black leading-relaxed pr-2 sm:pr-6 mt-2 sm:mt-3">
                         {item.a}
                       </p>
                     </motion.div>
