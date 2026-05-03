@@ -1,35 +1,76 @@
+import { motion } from 'framer-motion';
 import { features } from '@/constant/text';
 import Banner from '../assets/imported/express.png';
 
 const ExpressService = () => {
   return (
     <section className="relative w-full min-h-125 md:h-155 overflow-hidden">
-      <img
+      <motion.img
+        initial={{ scale: 1.1 }}
+        whileInView={{ scale: 1 }}
+        transition={{ duration: 1.5 }}
         src={Banner}
         alt="Service Banner"
         className="absolute inset-0 w-full h-full object-cover"
       />
       <div className="absolute inset-0 bg-black/40" />
       <div className="relative z-10 mx-auto h-full flex flex-col items-center justify-center text-center px-4 sm:px-6 py-12">
-        <h2 className="text-white text-3xl sm:text-3xl md:text-5xl font-serif mb-4 md:mb-6">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-white text-3xl sm:text-3xl md:text-5xl font-serif mb-4 md:mb-6"
+        >
           Premier Express Prime Service
-        </h2>
+        </motion.h2>
 
-        <p className="text-[#00AEEF] text-sm sm:text-base md:text-[18px] mt-2 tracking-wide uppercase">
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="text-[#00AEEF] text-sm sm:text-base md:text-[18px] mt-2 tracking-wide uppercase"
+        >
           Quality Service Faster Than You Can Think
-        </p>
+        </motion.p>
 
-        <p className="text-white text-sm sm:text-base md:text-[16px] max-w-5xl mt-4 leading-relaxed">
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="text-white text-sm sm:text-base md:text-[16px] max-w-5xl mt-4 leading-relaxed"
+        >
           Get your Mercedes-Benz serviced within 180 minutes or the service is
           complimentary. With no minimum time and hassle-free servicing,
           experience the ultimate in premium convenience. Our trained
           technicians bring complete focus on speed, precision and teamwork.
-        </p>
+        </motion.p>
 
-        <div className="grid grid-cols-2 sm:grid-cols-2 md:flex justify-center items-start gap-8 sm:gap-12 md:gap-20 mt-8 md:mt-10">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: {
+                staggerChildren: 0.2,
+                delayChildren: 0.6,
+              },
+            },
+          }}
+          className="grid grid-cols-2 sm:grid-cols-2 md:flex justify-center items-start gap-8 sm:gap-12 md:gap-20 mt-8 md:mt-10"
+        >
           {features.map((item, i) => (
-            <div
+            <motion.div
               key={i}
+              variants={{
+                hidden: { opacity: 0, scale: 0.8 },
+                visible: { opacity: 1, scale: 1 },
+              }}
               className="group flex flex-col items-center max-w-36 sm:max-w-65  cursor-pointer"
             >
               <div
@@ -52,9 +93,9 @@ const ExpressService = () => {
               <p className="text-xs sm:text-sm md:text-[16px] text-white leading-snug whitespace-pre-line text-center">
                 {item.text}
               </p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         <span className="absolute bottom-3 right-4 sm:right-6 text-[10px] text-gray-400">
           T&C Apply*

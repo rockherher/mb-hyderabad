@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { reviews } from '@/constant/text';
 import { Star } from 'lucide-react';
 
@@ -11,16 +12,40 @@ const Stars = () => (
 
 const Testimonials = () => {
   return (
-    <section className="py-12 md:py-20">
+    <section className="py-12 md:py-20 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6">
-        <h2 className="text-center text-2xl sm:text-3xl md:text-[34px] font-serif mb-8 md:mb-12.5 text-black">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center text-2xl sm:text-3xl md:text-[34px] font-serif mb-8 md:mb-12.5 text-black"
+        >
           Trusted by Mercedes-Benz Owners Across Hyderabad
-        </h2>
+        </motion.h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-50px' }}
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: {
+                staggerChildren: 0.1,
+              },
+            },
+          }}
+          className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6"
+        >
           {reviews.map((item, i) => (
-            <div
+            <motion.div
               key={i}
+              variants={{
+                hidden: { opacity: 0, x: i % 2 === 0 ? -20 : 20 },
+                visible: { opacity: 1, x: 0, transition: { duration: 0.5 } },
+              }}
               className="rounded-md p-4 sm:p-4.5 bg-[#f5f5f5] border hover:border-[#0067B1] duration-200 hover:shadow cursor-pointer"
             >
               <Stars />
@@ -32,9 +57,9 @@ const Testimonials = () => {
               <p className="text-xs sm:text-sm md:text-[14px] text-[#555] leading-[1.55]">
                 {item.text}
               </p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

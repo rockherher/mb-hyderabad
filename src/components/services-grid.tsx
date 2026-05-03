@@ -1,19 +1,47 @@
+import { motion } from 'framer-motion';
 import { services } from '@/constant/text';
 import { cn } from '@/lib/utils';
 
 const ServicesGrid = () => {
   return (
-    <section className="bg-white py-16 md:py-24 px-4 sm:px-6" id="services">
-      <div className="max-w-7xl mx-auto text-center mb-12 md:mb-16">
+    <section
+      className="bg-white py-16 md:py-24 px-4 sm:px-6 overflow-hidden"
+      id="services"
+    >
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '-100px' }}
+        transition={{ duration: 0.6 }}
+        className="max-w-7xl mx-auto text-center mb-12 md:mb-16"
+      >
         <h2 className="text-2xl sm:text-3xl md:text-5xl font-serif text-gray-900">
           Our Complete Service Range
         </h2>
-      </div>
+      </motion.div>
 
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: '-50px' }}
+        variants={{
+          hidden: { opacity: 0 },
+          visible: {
+            opacity: 1,
+            transition: {
+              staggerChildren: 0.1,
+            },
+          },
+        }}
+        className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3"
+      >
         {services.map((service, index) => (
-          <div
+          <motion.div
             key={index}
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+            }}
             className={cn(
               'p-6 sm:p-8 md:p-12 flex flex-col items-center text-center space-y-4 md:space-y-6 border-gray-200',
               'sm:border-b md:border-b-0',
@@ -43,9 +71,9 @@ const ServicesGrid = () => {
                 {service.description}
               </p>
             </div>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 };

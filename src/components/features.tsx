@@ -1,9 +1,16 @@
+import { motion } from 'framer-motion';
 import { featureData } from '@/constant/text';
 
 const Features = () => {
   return (
-    <section className="bg-white p-6 sm:py-16 md:py-20 px-4 sm:px-6 font-sans">
-      <div className="max-w-7xl mx-auto text-center mb-12 md:mb-16">
+    <section className="bg-white p-6 sm:py-16 md:py-20 px-4 sm:px-6 font-sans overflow-hidden">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '-100px' }}
+        transition={{ duration: 0.6 }}
+        className="max-w-7xl mx-auto text-center mb-12 md:mb-16"
+      >
         <h2 className="text-2xl sm:text-3xl md:text-5xl font-serif text-gray-900 mb-4 md:mb-6">
           Why Choose Landmark Cars Mercedes-Benz Service?
         </h2>
@@ -15,13 +22,32 @@ const Features = () => {
           dealership listed on the BSE (Dec 2023), we have delivered 193,000+
           luxury vehicles and serviced over 300,000 cars.
         </p>
-      </div>
+      </motion.div>
 
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: '-50px' }}
+        variants={{
+          hidden: { opacity: 0 },
+          visible: {
+            opacity: 1,
+            transition: {
+              staggerChildren: 0.1,
+            },
+          },
+        }}
+        transition={{ duration: 0.6 }}
+        className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6"
+      >
         {featureData.map((feature, index) => (
-          <div
+          <motion.div
             key={index}
-            className="relative bg-[#EAEAEA] p-6 sm:p-8 md:p-10 flex flex-col items-center text-center space-y-3 sm:space-y-4 group cursor-pointer justify-center w-full h-auto min-h-55 hover:bg-white hover:border-[#0067B1] hover:border-t hover:border-r hover:border-l transition-all duration-300"
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+            }}
+            className="relative bg-[#EAEAEA] p-6 sm:p-8 md:p-10 flex flex-col items-center text-center space-y-3 sm:space-y-4 group cursor-pointer justify-center w-full h-auto min-h-55 hover:bg-white hover:border-[#0067B1] hover:border-t hover:border-r hover:border-l transition-all duration-300 hover:border-b-4"
           >
             <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center">
               <img
@@ -38,11 +64,9 @@ const Features = () => {
             <p className="text-xs sm:text-sm text-gray-600 font-medium transition-colors duration-300 group-hover:text-[#0067B1]">
               {feature.subtitle}
             </p>
-
-            <span className="absolute bottom-0 left-0 w-full h-0.75 bg-[#EAEAEA] duration-300 group-hover:bg-[#0067B1]" />
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 };
