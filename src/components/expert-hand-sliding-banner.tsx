@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-import Img1 from '@/assets/img-vid/sliderImages/sliderImg01.jpg';
-import Img2 from '@/assets/img-vid/sliderImages/sliderImg02.jpg';
-import Img3 from '@/assets/img-vid/sliderImages/sliderImg03.jpg';
-import Img4 from '@/assets/img-vid/sliderImages/sliderImg04.jpg';
-import Img5 from '@/assets/img-vid/sliderImages/sliderImg05.jpg';
-import Img6 from '@/assets/img-vid/sliderImages/sliderImg06.jpg';
-import Img7 from '@/assets/img-vid/sliderImages/sliderImg07.jpg';
+import Img1 from '@/assets/img-vid/slider-image/img-01.jpg';
+import Img2 from '@/assets/img-vid/slider-image/img-02.jpg';
+import Img3 from '@/assets/img-vid/slider-image/img-03.jpg';
+import Img4 from '@/assets/img-vid/slider-image/img-04.jpg';
+import Img5 from '@/assets/img-vid/slider-image/img-05.jpg';
+import Img6 from '@/assets/img-vid/slider-image/img-06.jpg';
+import Img7 from '@/assets/img-vid/slider-image/img-07.jpg';
 
 const slides = [
   { img: Img1 },
