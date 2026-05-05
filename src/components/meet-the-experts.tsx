@@ -162,8 +162,10 @@ const MeetTheExperts = () => {
               type="button"
               aria-label={`Go to slide ${i + 1}`}
               onClick={() => goTo(i)}
-              className={`cursor-pointer h-2 rounded-full transition-all duration-300 ${
-                i === safePage ? 'w-8 bg-gray-900' : 'w-2 bg-gray-300'
+              className={`group relative h-1 transition-all duration-500 overflow-hidden ${
+                safePage === i
+                  ? 'w-12 bg-[#0078d6]'
+                  : 'w-4 bg-gray-300 hover:bg-gray-400'
               }`}
             />
           ))}
