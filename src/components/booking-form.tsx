@@ -167,6 +167,11 @@ const BookingForm: React.FC = () => {
                 <option value="e-class">E-Class</option>
                 <option value="s-class">S-Class</option>
                 <option value="glc">GLC</option>
+                <option value="a-class">A-Class</option>
+                <option value="gla">GLA</option>
+                <option value="glb">GLB</option>
+                <option value="gle">GLE</option>
+                <option value="gls">GLS</option>
                 <option value="others">Others</option>
               </select>
 
