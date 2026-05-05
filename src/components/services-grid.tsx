@@ -15,7 +15,7 @@ const ServicesGrid = () => {
         transition={{ duration: 0.6 }}
         className="max-w-7xl mx-auto text-center mb-12 md:mb-16"
       >
-        <h2 className="text-2xl sm:text-3xl md:text-5xl font-serif text-gray-900 mb-4 md:mb-6">
+        <h2 className="text-gray-900 text-[32px] md:text-[48px] lg:text-[56px] font-condensed">
           Our Complete Service Range
         </h2>
       </motion.div>
@@ -72,9 +72,9 @@ const ServicesGrid = () => {
             </div>
 
             <div className="space-y-1 sm:space-y-3 md:space-y-2">
-              <h4 className="text-lg sm:text-xl md:text-xl font-medium text-gray-900 tracking-tight">
+              <p className="text-lg sm:text-xl md:text-xl font-medium text-gray-900 tracking-tight">
                 {service.title}
-              </h4>
+              </p>
 
               <p className="text-gray-600 text-sm sm:text-sm leading-relaxed max-w-xs mx-auto">
                 {service.description}

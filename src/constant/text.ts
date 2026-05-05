@@ -34,7 +34,7 @@ import empSunitha from '@/assets/img-vid/emp-sunitha-arakala.jpeg';
 export const navLinks = [
   { label: 'Services', href: '#services' },
   { label: 'Book Now', href: '#book-now' },
-  { label: 'Faqs', href: '#faqs' },
+  { label: 'FAQs', href: '#faqs' },
   { label: 'Contact', href: '#contact' },
 ];
 
@@ -214,7 +214,7 @@ export const experts = [
     imageUrl: empSrikanth,
   },
   {
-    name: 'Mr. Sboban Sangi',
+    name: 'Mr. Shoban Sangi',
     role: 'Star Relationship Manager',
     email: 'shoban.s@landmarkcars.in',
     phone: '9281443891',

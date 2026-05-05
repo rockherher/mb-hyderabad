@@ -88,10 +88,10 @@ const BookingForm: React.FC = () => {
   return (
     <section className="container bg-white p-5 sm:py-16 sm:px-10" id="book-now">
       <div className="max-w-4xl mx-auto text-center mb-10">
-        <h2 className="text-2xl sm:text-3xl md:text-5xl font-serif text-gray-900 mb-4 md:mb-6">
+        <h2 className="text-gray-900 text-[32px] md:text-[48px] lg:text-[56px] font-condensed ">
           Get Your Slot in Minutes
         </h2>
-        <p className="text-gray-600 font-sans text-md sm:text-lg">
+        <p className="text-gray-600 font-light text-md sm:text-lg">
           Fill in your details and we'll confirm your appointment
         </p>
       </div>
@@ -113,7 +113,7 @@ const BookingForm: React.FC = () => {
               value={formData.fullName}
               type="text"
               placeholder="Enter your name"
-              className="w-full px-6 py-4 rounded-full border border-gray-300 bg-white"
+              className="w-full px-6 py-4 rounded-full border-2 border-gray-300 bg-white"
               onChange={(e) => handleChange('fullName', e.target.value)}
             />
             {errors.fullName && (
@@ -133,7 +133,7 @@ const BookingForm: React.FC = () => {
               value={formData.mobileNumber}
               type="tel"
               placeholder="+91 xxxx xx xxxx"
-              className="w-full px-6 py-4 rounded-full border border-gray-300 bg-white"
+              className="w-full px-6 py-4 rounded-full border-2 border-gray-300 bg-white"
               onChange={(e) =>
                 handleChange(
                   'mobileNumber',
@@ -159,7 +159,7 @@ const BookingForm: React.FC = () => {
                 name="carModel"
                 value={formData.carModel}
                 onChange={(e) => handleChange('carModel', e.target.value)}
-                className="appearance-none w-full px-6 py-4 rounded-full border border-gray-300 bg-white cursor-pointer pr-12"
+                className="appearance-none w-full px-6 py-4 rounded-full text-gray-600 border-2 border-gray-300 bg-white cursor-pointer pr-12"
               >
                 <option value="c-class" defaultChecked>
                   C-Class
@@ -167,6 +167,7 @@ const BookingForm: React.FC = () => {
                 <option value="e-class">E-Class</option>
                 <option value="s-class">S-Class</option>
                 <option value="glc">GLC</option>
+                <option value="others">Others</option>
               </select>
 
               <ChevronDown
@@ -187,13 +188,14 @@ const BookingForm: React.FC = () => {
                 name="serviceType"
                 value={formData.serviceType}
                 onChange={(e) => handleChange('serviceType', e.target.value)}
-                className="appearance-none w-full px-6 py-4 rounded-full border border-gray-300 bg-white cursor-pointer pr-12"
+                className="appearance-none w-full px-6 py-4 rounded-full border-2 border-gray-300 bg-white cursor-pointer pr-12"
               >
                 <option value="periodic" defaultChecked>
                   Periodic Maintenance
                 </option>
                 <option value="repair">General Repair</option>
                 <option value="body">Body & Paint</option>
+                <option value="others">Others</option>
               </select>
 
               <ChevronDown
@@ -206,13 +208,13 @@ const BookingForm: React.FC = () => {
           {/* Date */}
           <div className="flex flex-col space-y-2">
             <label className="text-md font-medium text-gray-700 ml-2">
-              Preferred Date & Time
+              Preferred Date
             </label>
             <input
               name="preferredDate"
               value={formData.preferredDate}
-              type="datetime-local"
-              className="w-full px-6 py-4 rounded-full border border-gray-300 bg-white"
+              type="date"
+              className="w-full px-6 py-4 rounded-full border-2 border-gray-300 bg-white"
               onChange={(e) => handleChange('preferredDate', e.target.value)}
             />
             {errors.preferredDate && (
@@ -229,7 +231,7 @@ const BookingForm: React.FC = () => {
                 name="expressService"
                 type="checkbox"
                 checked={formData.expressService}
-                className="w-5 h-5 accent-[#005694]"
+                className="w-5 h-5 accent-[#0078d6]"
                 onChange={(e) =>
                   handleChange('expressService', e.target.checked)
                 }
@@ -244,7 +246,7 @@ const BookingForm: React.FC = () => {
           <div className="md:col-span-2 flex justify-center mt-6">
             <button
               type="submit"
-              className="w-full md:w-1/2 py-4 rounded-full border border-black hover:bg-[#0067B1] hover:text-white transition-all font-medium"
+              className="w-full md:w-1/4 py-4 rounded-full border border-black hover:bg-[#0078d6] hover:text-white transition-all font-medium cursor-pointer"
             >
               Book Now
             </button>

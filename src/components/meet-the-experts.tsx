@@ -25,8 +25,12 @@ const ExpertProfile = ({
     className="flex flex-col items-center text-center group"
     key={index}
   >
-    <div className="w-24 h-24 sm:w-28 sm:h-28 md:w-40 md:h-40 rounded-full overflow-hidden mb-3 md:mb-4 group-hover:border-gray-200 transition-all duration-300 border-gray-500">
-      <img src={imageUrl} alt={name} className="w-full h-full object-cover" />
+    <div className="w-24 h-24 sm:w-28 sm:h-28 md:w-40 md:h-40 rounded-full overflow-hidden mb-3 md:mb-4 transition-all duration-300  bg-[#0C1733] border-white border-4">
+      <img
+        src={imageUrl}
+        alt={name}
+        className="w-full h-full object-contain "
+      />
     </div>
 
     <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-1">
@@ -72,7 +76,7 @@ const MeetTheExperts = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-12 md:mb-20"
         >
-          <h2 className="text-2xl sm:text-3xl md:text-5xl font-serif text-gray-900 mb-4 md:mb-6">
+          <h2 className="text-gray-900 text-[32px] md:text-[48px] lg:text-[56px] font-condensed">
             Meet the Experts
           </h2>
         </motion.div>

@@ -1,19 +1,25 @@
 import { motion } from 'framer-motion';
 import { handleScroll } from '@/lib/utils';
-import HeroBanner from '../assets/img-vid/01-hero-section-banner.jpg';
+import HeroVideo from '../assets/img-vid/hero-section-video.mp4';
 
 const Hero = () => {
   return (
     <section className="relative w-full min-h-125 md:min-h-175 lg:min-h-220 overflow-hidden flex items-center">
-      <div className="absolute inset-0 z-0">
-        <motion.img
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <motion.video
           initial={{ scale: 1.1, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 1.5, ease: 'easeOut' }}
-          src={HeroBanner}
-          alt="Mercedes-Benz Showroom"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
           className="w-full h-full object-cover"
-        />
+        >
+          <source src={HeroVideo} type="video/mp4" />
+          Your browser does not support the video tag.
+        </motion.video>
 
         <div className="absolute inset-0 bg-linear-to-r from-black/80 via-black/60 to-transparent" />
       </div>
@@ -26,7 +32,7 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="space-y-2"
           >
-            <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-serif leading-tight">
+            <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-condensed leading-tight">
               Authorised Mercedes-Benz <br />
               Landmark Cars Service in Hyderabad
             </h1>
@@ -61,13 +67,6 @@ const Hero = () => {
               onClick={(e) => handleScroll(e, '#book-now')}
             >
               Book Your Service
-            </button>
-
-            <button
-              className="px-6 sm:px-8 py-3 sm:py-5 bg-[#0067B1] text-white font-sans text-xs sm:text-sm font-medium hover:bg-[#005694] transition-all rounded-md cursor-pointer"
-              onClick={(e) => handleScroll(e, '#book-now')}
-            >
-              Schedule a Pickup
             </button>
           </motion.div>
         </div>
