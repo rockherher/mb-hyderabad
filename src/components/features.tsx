@@ -11,7 +11,7 @@ const Features = () => {
         transition={{ duration: 0.6 }}
         className="max-w-7xl mx-auto text-center mb-12 md:mb-16"
       >
-        <h2 className="text-2xl sm:text-3xl md:text-5xl font-serif text-gray-900 mb-4 md:mb-6">
+        <h2 className="text-gray-900 text-[32px] md:text-[48px] lg:text-[56px] font-condensed">
           Why Choose Landmark Cars Mercedes-Benz Service?
         </h2>
         <p className="text-gray-600 max-w-4xl mx-auto leading-relaxed text-xs sm:text-sm md:text-base">
@@ -47,21 +47,20 @@ const Features = () => {
               hidden: { opacity: 0, y: 20 },
               visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
             }}
-            className="relative bg-[#EAEAEA] p-6 sm:p-8 md:p-10 flex flex-col items-center text-center space-y-3 sm:space-y-4 group cursor-pointer justify-center w-full h-auto min-h-55 hover:bg-white hover:border-[#0067B1] hover:border-t hover:border-r hover:border-l transition-all duration-300 hover:border-b-4"
+            className="relative bg-[#EAEAEA] p-4 sm:p-3 md:p-7 flex flex-col items-center text-center space-y-1 sm:space-y-1 group cursor-pointer justify-center w-full h-auto min-h-55 hover:bg-white hover:border-[#0078d6] hover:border-t hover:border-r hover:border-l transition-all duration-300 hover:border-b-4"
           >
-            <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center">
+            <div className="w-16 h-16 sm:w-16 sm:h-16 flex items-center justify-center mb-4">
               <img
                 src={feature.image}
                 alt={feature.title}
-                className="w-full h-full object-contain transition-all duration-300 brightness-0"
+                className="w-full h-full object-contain transition-all duration-300 brightness-0 group-hover:filter-[invert(32%)_sepia(98%)_saturate(3200%)_hue-rotate(195deg)_brightness(95%)_contrast(105%)]"
               />
             </div>
-
-            <h4 className="text-base sm:text-lg font-semibold text-gray-900 transition-colors duration-300 group-hover:text-[#0067B1]">
+            <p className="text-base font-san sm:text-xl font-medium text-gray-900 transition-colors duration-300 group-hover:text-[#0078d6]">
               {feature.title}
-            </h4>
+            </p>
 
-            <p className="text-xs sm:text-sm text-gray-600 font-medium transition-colors duration-300 group-hover:text-[#0067B1]">
+            <p className="text-md sm:text-md text-gray-600 font-medium transition-colors duration-300 group-hover:text-[#0078d6]">
               {feature.subtitle}
             </p>
           </motion.div>

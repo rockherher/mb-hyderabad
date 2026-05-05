@@ -6,24 +6,35 @@ import {
   FaInstagram,
   FaFacebookF,
   FaYoutube,
+  FaLinkedin,
 } from 'react-icons/fa';
 
 const socialLinks = [
   {
     icon: FaInstagram,
-    href: 'https://instagram.com',
+    href: 'https://www.instagram.com/landmarkcarshyderabad',
   },
   {
     icon: FaFacebookF,
-    href: 'https://facebook.com',
+    href: 'https://www.facebook.com/p/Landmark-Cars-Hyderabad-61569866016435/ ',
   },
   {
     icon: FaYoutube,
-    href: 'https://youtube.com',
+    href: 'https://youtube.com/@mercedes-benzlandmarkcarshyd?si=wSHIaQlRrYRm005_/',
+  },
+  {
+    icon: FaLinkedin,
+    href: 'https://www.linkedin.com/company/landmarkcars-hyderabad/',
   },
 ];
 
-const newNavLink = [...navLinks, { label: 'Privacy Policy', href: '#contact' }];
+const newNavLink = [
+  ...navLinks,
+  {
+    label: 'Privacy Policy',
+    href: 'https://www.mercedes-benz.co.in/passengercars/brand/privacy.html',
+  },
+];
 
 const Footer = () => {
   return (
@@ -32,7 +43,7 @@ const Footer = () => {
       id="contact"
     >
       <div className="max-w-5xl mx-auto px-4 sm:px-6 py-12 md:py-16 text-center">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif mb-8 md:mb-10">
+        <h2 className="text-white text-[32px] md:text-[48px] lg:text-[56px] font-condensed mb-8 md:mb-10">
           Get in Touch With Us
         </h2>
 
@@ -73,7 +84,7 @@ const Footer = () => {
               <p className="text-[10px] tracking-wider">WHATSAPP</p>
             </div>
             <a
-              href="https://wa.me/917075651122"
+              href="https://wa.me/917760988901?text=Hi"
               target="_blank"
               className="text-lg sm:text-[20px] hover:underline"
             >
@@ -99,8 +110,14 @@ const Footer = () => {
               <li key={link.href}>
                 <a
                   href={link.href}
+                  target={link.href.startsWith('#') ? '_self' : '_blank'}
+                  rel={link.href.startsWith('#') ? '' : 'noopener noreferrer'}
                   className="text-white hover:underline transition"
-                  onClick={(e) => handleScroll(e, link.href)}
+                  onClick={(e) => {
+                    if (link.href.startsWith('#')) {
+                      handleScroll(e, link.href);
+                    }
+                  }}
                 >
                   {link.label}
                 </a>
@@ -110,9 +127,9 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-[#6666666c] mt-8 md:mt-10 pt-6 md:pt-8 max-w-3xl mx-auto">
-          <h3 className="text-base sm:text-2xl font-medium mb-3">
+          <p className="text-base sm:text-2xl font-medium mb-3">
             About Landmark Cars
-          </h3>
+          </p>
           <p className="text-xs sm:text-sm leading-relaxed font-light">
             Landmark Cars Is A Premier Automotive Destination With A 25-Year
             Legacy Of Excellence In Authorized Dealerships & Service Centers. We

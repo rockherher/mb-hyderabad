@@ -22,7 +22,6 @@ import section4 from '../assets/icons/19-section.png';
 import section5 from '../assets/icons/20-section.png';
 import section6 from '../assets/icons/21-section.png';
 
-
 import empArum from '@/assets/img-vid/emp-arun-kumar.jpeg';
 import empHarshadha from '@/assets/img-vid/emp-harshadha-jambula.jpeg';
 import empNaresh from '@/assets/img-vid/emp-naresh-yadav.jpeg';
@@ -32,11 +31,10 @@ import empShoban from '@/assets/img-vid/emp-sboban-sangi.jpeg';
 import empSrikanth from '@/assets/img-vid/emp-srikanth-kodam.jpeg';
 import empSunitha from '@/assets/img-vid/emp-sunitha-arakala.jpeg';
 
-
 export const navLinks = [
   { label: 'Services', href: '#services' },
   { label: 'Book Now', href: '#book-now' },
-  { label: 'Faqs', href: '#faqs' },
+  { label: 'FAQs', href: '#faqs' },
   { label: 'Contact', href: '#contact' },
 ];
 
@@ -114,49 +112,54 @@ export const features = [
     text: 'Complete digital\ninterface',
   },
 ];
-
 export const services = [
   {
     title: 'Regular Maintenance',
     description:
       'Periodic servicing, oil changes, filter replacements and comprehensive health checks to keep your Mercedes-Benz running smoothly.',
     image: section1,
-    scale: 'scale-100',
+    scaleMobile: 'scale-150',
+    scaleWeb: 'md:scale-100',
   },
   {
     title: 'AC & Cooling System Check',
     description:
       'Professional air conditioning inspection, refrigerant top-up, cooling system diagnostics and AC fumigation for a fresh cabin.',
     image: section2,
-    scale: 'scale-140',
+    scaleMobile: 'scale-200',
+    scaleWeb: 'md:scale-140',
   },
   {
     title: 'Engine Diagnostics',
     description:
       'Advanced computer diagnostics to identify any engine issues, check error codes, and ensure optimal performance.',
     image: section3,
-    scale: 'scale-115',
+    scaleMobile: 'scale-175',
+    scaleWeb: 'md:scale-115',
   },
   {
     title: 'Body & Paint Work',
     description:
       "Professional dent removal, touch-ups, paint protection, and detailed cosmetic restoration for your vehicle's exterior.",
     image: section4,
-    scale: 'scale-120',
+    scaleMobile: 'scale-170',
+    scaleWeb: 'md:scale-120',
   },
   {
     title: 'Brake Service',
     description:
       'Comprehensive brake system inspection, pad replacement, rotor servicing, and fluid checks for safe braking performance.',
     image: section5,
-    scale: 'scale-130',
+    scaleMobile: 'scale-180',
+    scaleWeb: 'md:scale-130',
   },
   {
     title: 'Battery & Tyres',
     description:
       'Battery testing and replacement, tyre rotation, alignment and pressure checks to ensure reliability and safety.',
     image: section6,
-    scale: 'scale-105',
+    scaleMobile: 'scale-155',
+    scaleWeb: 'md:scale-105',
   },
 ];
 
@@ -211,14 +214,13 @@ export const experts = [
     imageUrl: empSrikanth,
   },
   {
-    name: 'Mr. Sboban Sangi',
+    name: 'Mr. Shoban Sangi',
     role: 'Star Relationship Manager',
     email: 'shoban.s@landmarkcars.in',
     phone: '9281443891',
     imageUrl: empShoban,
   },
 ];
-
 
 export const reviews = [
   {
