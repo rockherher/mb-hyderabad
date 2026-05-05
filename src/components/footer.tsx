@@ -1,4 +1,3 @@
-import { navLinks } from '@/constant/text';
 import { handleScroll } from '@/lib/utils';
 import { Phone, Mail } from 'lucide-react';
 import {
@@ -29,7 +28,9 @@ const socialLinks = [
 ];
 
 const newNavLink = [
-  ...navLinks,
+  { label: 'Services', href: '#services' },
+  { label: 'Book Now', href: '#book-now' },
+  { label: 'FAQs', href: '#faqs' },
   {
     label: 'Privacy Policy',
     href: 'https://www.mercedes-benz.co.in/passengercars/brand/privacy.html',
