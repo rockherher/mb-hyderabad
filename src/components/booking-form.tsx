@@ -103,7 +103,7 @@ const BookingForm: React.FC = () => {
       <div className="mx-auto bg-[#F8F8F8] rounded-2xl p-4 md:p-8 border border-gray-300">
         <form
           onSubmit={handleSubmit}
-          action="https://script.google.com/macros/s/AKfycbzcZozvQtDM7G4Eu1-o3z539aDmoogiK5N134HadcT0jdx_6I1sHjBXbFSsQwAg1b2W9w/exec"
+          action="https://script.google.com/macros/s/1rd2cs95U4Zz5KD0_sZEylr2oM_UILg28dXXSmtSme7HskvjFnhW0Ztyh/exec"
           method="POST"
           className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4"
         >
