@@ -5,7 +5,9 @@ type FormDataType = {
   fullName: string;
   mobileNumber: string;
   carModel: string;
+  otherModel: string;
   serviceType: string;
+  otherServiceType: string;
   preferredDate: string;
   expressService: boolean;
 };
@@ -20,8 +22,10 @@ const BookingForm: React.FC = () => {
   const [formData, setFormData] = useState<FormDataType>({
     fullName: '',
     mobileNumber: '',
-    carModel: '',
-    serviceType: '',
+    carModel: 'a-class',
+    otherModel: '',
+    serviceType: 'periodic',
+    otherServiceType: '',
     preferredDate: '',
     expressService: false,
   });
@@ -103,6 +107,26 @@ const BookingForm: React.FC = () => {
           method="POST"
           className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4"
         >
+          {/* Hidden inputs for carModel and serviceType to handle "Other" option */}
+          <input
+            type="hidden"
+            name="carModel"
+            value={
+              formData.carModel === 'other'
+                ? formData.otherModel
+                : formData.carModel
+            }
+          />
+          <input
+            type="hidden"
+            name="serviceType"
+            value={
+              formData.serviceType === 'other'
+                ? formData.otherServiceType
+                : formData.serviceType
+            }
+          />
+
           {/* Full Name */}
           <div className="flex flex-col space-y-2">
             <label className="text-md font-medium text-gray-700 ml-2">
@@ -156,23 +180,20 @@ const BookingForm: React.FC = () => {
 
             <div className="relative">
               <select
-                name="carModel"
                 value={formData.carModel}
                 onChange={(e) => handleChange('carModel', e.target.value)}
                 className="appearance-none w-full px-6 py-4 rounded-full text-gray-600 border-2 border-gray-300 bg-white cursor-pointer pr-12"
               >
-                <option value="c-class" defaultChecked>
-                  C-Class
-                </option>
+                <option value="a-class">A-Class</option>
+                <option value="c-class">C-Class</option>
                 <option value="e-class">E-Class</option>
                 <option value="s-class">S-Class</option>
-                <option value="glc">GLC</option>
-                <option value="a-class">A-Class</option>
                 <option value="gla">GLA</option>
                 <option value="glb">GLB</option>
+                <option value="glc">GLC</option>
                 <option value="gle">GLE</option>
                 <option value="gls">GLS</option>
-                <option value="others">Others</option>
+                <option value="other">Other</option>
               </select>
 
               <ChevronDown
@@ -180,6 +201,19 @@ const BookingForm: React.FC = () => {
                 className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-gray-500"
               />
             </div>
+
+            {formData.carModel === 'other' && (
+              <div className="mt-2 flex flex-col space-y-2">
+                <input
+                  value={formData.otherModel}
+                  type="text"
+                  placeholder="Specify Car Model"
+                  className="w-full px-6 py-4 rounded-full border-2 border-gray-300 bg-white"
+                  onChange={(e) => handleChange('otherModel', e.target.value)}
+                  required
+                />
+              </div>
+            )}
           </div>
 
           {/* Service Type */}
@@ -190,17 +224,17 @@ const BookingForm: React.FC = () => {
 
             <div className="relative">
               <select
-                name="serviceType"
                 value={formData.serviceType}
                 onChange={(e) => handleChange('serviceType', e.target.value)}
                 className="appearance-none w-full px-6 py-4 rounded-full border-2 border-gray-300 bg-white cursor-pointer pr-12"
               >
-                <option value="periodic" defaultChecked>
-                  Periodic Maintenance
-                </option>
+                <option value="periodic">Periodic Maintenance</option>
                 <option value="repair">General Repair</option>
                 <option value="body">Body & Paint</option>
-                <option value="others">Others</option>
+                <option value="ac">AC Check</option>
+                <option value="tyre">Tyre Check</option>
+                <option value="battery">Battery Check</option>
+                <option value="other">Other</option>
               </select>
 
               <ChevronDown
@@ -208,6 +242,21 @@ const BookingForm: React.FC = () => {
                 className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-gray-500"
               />
             </div>
+
+            {formData.serviceType === 'other' && (
+              <div className="mt-2 flex flex-col space-y-2">
+                <input
+                  value={formData.otherServiceType}
+                  type="text"
+                  placeholder="Specify Service Type"
+                  className="w-full px-6 py-4 rounded-full border-2 border-gray-300 bg-white"
+                  onChange={(e) =>
+                    handleChange('otherServiceType', e.target.value)
+                  }
+                  required
+                />
+              </div>
+            )}
           </div>
 
           {/* Date */}

@@ -25,9 +25,7 @@ const ExpertProfile = ({
       />
     </div>
 
-    <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-1">
-      {name}
-    </h3>
+    <h3 className="text-base sm:text-lg text-gray-900 mb-1">{name}</h3>
 
     <p className="text-xs sm:text-sm text-gray-500 font-medium mb-2 md:mb-3">
       {role}

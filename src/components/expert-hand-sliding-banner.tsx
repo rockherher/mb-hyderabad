@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
+import Img0 from '@/assets/img-vid/03-section-waiting-lounge.jpg';
 import Img1 from '@/assets/img-vid/slider-image/img-01.jpg';
 import Img2 from '@/assets/img-vid/slider-image/img-02.jpg';
 import Img3 from '@/assets/img-vid/slider-image/img-03.jpg';
@@ -10,6 +11,7 @@ import Img6 from '@/assets/img-vid/slider-image/img-06.jpg';
 import Img7 from '@/assets/img-vid/slider-image/img-07.jpg';
 
 const slides = [
+  { img: Img0 },
   { img: Img1 },
   { img: Img2 },
   { img: Img3 },

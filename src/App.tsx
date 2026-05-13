@@ -9,6 +9,7 @@ import MeetTheExperts from './components/meet-the-experts';
 import ExpertHandSliderBanner from './components/expert-hand-sliding-banner';
 import FAQ from './components/faq';
 import Footer from './components/footer';
+import FloatingWhatsApp from './components/floating-whatsapp';
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
       <ExpertHandSliderBanner />
       <FAQ />
       <Footer />
+      <FloatingWhatsApp />
     </>
   );
 };

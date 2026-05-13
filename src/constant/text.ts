@@ -196,14 +196,14 @@ export const experts = [
     name: 'Mr. Sai Pavan',
     role: 'Certified Customer Services Consultant',
     email: 'saipavan.b@landmarkcars.in',
-    phone: '9284443893',
+    phone: '9281443893',
     imageUrl: empSaiPavan,
   },
   {
     name: 'Ms. Naresh Yadav',
     role: 'Relationship Manager - B&P',
     email: 'naresh.y@landmarkcars.in',
-    phone: '9281443893',
+    phone: '9281443891',
     imageUrl: empNaresh,
   },
   {

@@ -70,10 +70,10 @@ const Footer = () => {
               <p className="text-[10px] tracking-wider">EMAIL</p>
             </div>
             <a
-              href="mailto:service@landmarkcarshyd.com"
+              href="mailto:info@landmarkcars.in"
               className="text-lg sm:text-[20px] hover:underline break-all"
             >
-              service@landmarkcarshyd.com
+              info@landmarkcars.in
             </a>
           </div>
 
@@ -85,7 +85,7 @@ const Footer = () => {
               <p className="text-[10px] tracking-wider">WHATSAPP</p>
             </div>
             <a
-              href="https://wa.me/917760988901?text=Hi"
+              href="https://wa.me/919281443894?text=Hi"
               target="_blank"
               className="text-lg sm:text-[20px] hover:underline"
             >
