@@ -18,7 +18,15 @@ type ErrorType = {
   preferredDate: string;
 };
 
-const BookingForm: React.FC = () => {
+type BookingFormProps = {
+  onSuccess?: () => void;
+};
+
+const BOOKING_ENDPOINT =
+  'https://script.google.com/macros/s/AKfycbzQUwiMezmCEbhG8Q87OwcUR1mcEl_8wKbJFvoHxeLokM8T46CbAVV0HYZ6CQwbwzyy/exec';
+
+const BookingForm: React.FC<BookingFormProps> = ({ onSuccess }) => {
+  const [submitting, setSubmitting] = useState(false);
   const [formData, setFormData] = useState<FormDataType>({
     fullName: '',
     mobileNumber: '',
@@ -80,13 +88,29 @@ const BookingForm: React.FC = () => {
     return isValid;
   };
 
-  // ✅ Submit
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (!validate()) return;
+    if (!validate() || submitting) return;
 
-    e.currentTarget.submit(); // only submit if valid
+    const params = new URLSearchParams();
+    new FormData(e.currentTarget).forEach((value, key) => {
+      params.append(key, value.toString());
+    });
+
+    setSubmitting(true);
+    try {
+      await fetch(BOOKING_ENDPOINT, {
+        method: 'POST',
+        mode: 'no-cors',
+        body: params,
+      });
+      onSuccess?.();
+    } catch {
+      onSuccess?.();
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -103,8 +127,6 @@ const BookingForm: React.FC = () => {
       <div className="mx-auto bg-[#F8F8F8] rounded-2xl p-4 md:p-8 border border-gray-300">
         <form
           onSubmit={handleSubmit}
-          action="https://script.google.com/macros/s/AKfycbzQUwiMezmCEbhG8Q87OwcUR1mcEl_8wKbJFvoHxeLokM8T46CbAVV0HYZ6CQwbwzyy/exec"
-          method="POST"
           className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4"
         >
           {/* Hidden inputs for carModel and serviceType to handle "Other" option */}
@@ -280,7 +302,7 @@ const BookingForm: React.FC = () => {
 
           {/* Checkbox */}
           <div className="flex items-end pb-4">
-            <label className="flex items-center space-x-3 cursor-pointer">
+            <label className="flex items-center space-x-3 cursor-pointer" style={{marginBottom:'3px'}}>
               <input
                 name="expressService"
                 type="checkbox"
@@ -300,9 +322,10 @@ const BookingForm: React.FC = () => {
           <div className="md:col-span-2 flex justify-center mt-6">
             <button
               type="submit"
-              className="w-full md:w-1/4 py-4 rounded-full border border-black hover:bg-[#0078d6] hover:text-white transition-all font-medium cursor-pointer"
+              disabled={submitting}
+              className="w-full md:w-1/4 py-4 rounded-full border border-black hover:bg-[#0078d6] hover:text-white transition-all font-medium cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
             >
-              Book Now
+              {submitting ? 'Submitting…' : 'Book Now'}
             </button>
           </div>
         </form>

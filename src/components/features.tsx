@@ -14,7 +14,7 @@ const Features = () => {
         <h2 className="text-gray-900 text-[32px] md:text-[48px] lg:text-[56px] font-condensed">
           Why Choose Landmark Cars Mercedes-Benz Service?
         </h2>
-        <p className="text-gray-600 max-w-4xl mx-auto leading-relaxed text-xs sm:text-sm md:text-base">
+        <p className="text-gray-600 max-w-5xl mx-auto leading-relaxed text-xs sm:text-sm md:text-base">
           Since 1998, Group Landmark has been a leader in India's premium and
           luxury automotive retail industry. With 125 facilities across 32
           cities, we've built a strong legacy of trust, excellence and
